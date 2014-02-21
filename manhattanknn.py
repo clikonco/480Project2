@@ -1,20 +1,20 @@
 def manhattan():
     #manhattan
-#    p = [(2, 10),(2, 5),(8, 4),(5, 8),(7, 5),(6, 4), (1, 2), (4, 9)]
+    p = [(2, 10),(2, 5),(8, 4),(5, 8),(7, 5),(6, 4), (1, 2), (4, 9)]
 
   #  p2 = [(1,1),(2,1),(4,3),(5,4)]
 
-    p=[(0,3.88),(0,3.65),(11,3.55),(12,3.14),(21,2.89),(14,3.24),(22,3.1),(25,2.85),(36,2.63),(40,2.75)]
+#    p=[(0,3.88),(0,3.65),(11,3.55),(12,3.14),(21,2.89),(14,3.24),(22,3.1),(25,2.85),(36,2.63),(40,2.75)]
     #choose n number of clusters(centers)
     orig = p[0]
     orig2 = p[3]
     orig3 = p[6]
-    orig4 = p[9]
+ #   orig4 = p[9]
 
     print("\nDist mean1: ",orig)
     print("\nDist mean2: ",orig2)
     print("\nDist mean3: ",orig3)
-    print("\nDist mean3: ",orig4)
+ #   print("\nDist mean3: ",orig4)
 
     #Change to add more
     firstdist=list(map(lambda point: (abs(point[0]-orig[0])+ abs(point[1]-orig[1])), p))
@@ -26,11 +26,11 @@ def manhattan():
     thirddist=list(map(lambda point: (abs(point[0]-orig3[0])+ abs(point[1]-orig3[1])), p))
     print("Third Distance Mean: ",thirddist)
 
-    fourthdist=list(map(lambda point: (abs(point[0]-orig4[0])+ abs(point[1]-orig4[1])), p))
-    print("Fourth Distance Mean: ",fourthdist)
-    
+ #   fourthdist=list(map(lambda point: (abs(point[0]-orig4[0])+ abs(point[1]-orig4[1])), p))
+ #   print("Fourth Distance Mean: ",fourthdist)
+   
     #Change to add more
-    zipped = zip(firstdist,seconddist,thirddist,fourthdist)
+    zipped = zip(firstdist,seconddist,thirddist)#,fourthdist)
     ###################
 
     listzip=list(zipped)
@@ -41,7 +41,7 @@ def manhattan():
     L1 = list()
     L2 = list()
     L3 = list()
-    L4 = list()
+ #   L4 = list()
 
     xlist=list()
     ylist=list()
@@ -68,8 +68,8 @@ def manhattan():
         elif((minttuple+1) == 3):
             L3.append(p[n])
             
-        elif((minttuple+1) == 4):
-            L4.append(p[n])  
+ #       elif((minttuple+1) == 4):
+ #           L4.append(p[n])  
             
         
         n=n+1
@@ -77,19 +77,19 @@ def manhattan():
     print("Near Cluster one:",L1)
     print("Near CLuster two:",L2)
     print("Near CLuster three:",L3)
-    print("Near CLuster fourth:",L4)
+ #   print("Near CLuster fourth:",L4)
 
 
     uz1=list(zip(*L1))
     uz2=list(zip(*L2))
     uz3=list(zip(*L3))
-    uz4=list(zip(*L4))
+ #   uz4=list(zip(*L4))
 
 
     print("Unziped L1: ",uz1)
     print("Unziped L2: ",uz2)
     print("Unziped L3: ",uz3)
-    print("Unziped L4: ",uz4)
+ #   print("Unziped L4: ",uz4)
 
 #FIrst
     #FOR X
@@ -174,33 +174,12 @@ def manhattan():
     xlist[:] = []
     ylist[:] = []
 
-#FOURTH
-    #FOR X
-    uz4ttl=sum(uz4[0])
-    #print(uz2ttl)
-    uz4len=len(uz4[0])
-    #print(uz2len+1)
-    uz4ttl=(uz4ttl/(uz4len))
-    xlist.append(uz4ttl)
-    #print(uz2ttl)
 
-    #FOR Y
-    uz4ttl4=sum(uz4[1])
-    #print(uz2ttl2)
-    uz4len4=len(uz4[1])
-    #print(uz2len2+1)
-    uz4ttl4=(uz4ttl4/(uz4len4))
-    #print(uz2ttl2)
-    ylist.append(uz4ttl4)
-
-
-    newcenter2=zip(xlist,ylist)
-    listcoord4=list(newcenter2)
 
     print("New Center for CLuster two: ",listcoord1)
     print("New Center for CLuster two: ",listcoord2)
     print("New Center for CLuster three: ",listcoord3)
-    print("New Center for CLuster four: ",listcoord4)
-    return (listcoord1,listcoord2,listcoord3,listcoord4)
+ #   print("New Center for CLuster four: ",listcoord4)
+    return (listcoord1,listcoord2,listcoord3)#,listcoord4)
 
 #manhattan()
