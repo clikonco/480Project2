@@ -1,5 +1,5 @@
-#import numpy as np
-#import math
+import numpy as np
+import math
 #Second Method
 def euclidmain():
     p = [(2, 10),(2, 5),(8, 4),(5, 8),(7, 5),
@@ -60,12 +60,12 @@ def euclidmain():
     #Determining the minimum of each pair
         ##############
         for n in range(length):
-            print("Size of tuple: ",length) #Total number of points to find min distances
+            #print("Size of tuple: ",length) #Total number of points to find min distances
             mint = min(listzip[n]) #Finding minimum of each pair at "n" position
-            print("Min in current Tuple: ",mint) #The min in the pair
+            #print("Min in current Tuple: ",mint) #The min in the pair
             minttuple = (listzip[n].index(mint)) #location of that minimum
-            print("Current Coordinates: ", p[n])
-            print("Location of Min Tuple (Closest to): ",minttuple+1) #Which cluster is closest, add one because of start being [0]
+            #print("Current Coordinates: ", p[n])
+            #print("Location of Min Tuple (Closest to): ",minttuple+1) #Which cluster is closest, add one because of start being [0]
 
             G.append(minttuple+1)
             if ((minttuple+1) == 1):
@@ -78,7 +78,7 @@ def euclidmain():
                 L3.append(p[n])
             
             n=n+1
-            print("\n")
+            #print("\n")
 
 
         poped = p2.pop(0)
@@ -86,9 +86,9 @@ def euclidmain():
 
     while True:
         euclid()
-        orig = np.average(L1, axis = 0)
-        orig2 = np.average(L2, axis=0)
-        orig3 = np.average(L3, axis=0)
+        orig = list(np.average(L1, axis = 0))
+        orig2 = list(np.average(L2, axis=0))
+        orig3 = list(np.average(L3, axis=0))
         print("C1: ",orig)
         print("C2: ",orig2)
         print("C3: ",orig3)

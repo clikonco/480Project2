@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import math
 import numpy as np
 import manhattanknn as mk
-
+import euclidmodule as ek
 master = Tk()
 master.title("K-Means")
 master.geometry("350x425")
@@ -193,19 +193,30 @@ dd.grid(row=15, column=2, padx=1)
 
 
 
-#importing from algorithm
-listcoord2,listcoord3=mk.manhattan()
-coordx = [float(i[0]) for i in listcoord2]
-coordy = [float(i[1]) for i in listcoord2]
+#importing from Manhattan algorithm
+def manhattanalgorithm():    
+    listcoord2,listcoord3=mk.manhattan()
+    coordx = [float(i[0]) for i in listcoord1]
+    coordy = [float(i[1]) for i in listcoord1]
+    coordx2 = [float(i[0]) for i in listcoord2]
+    coordy2 = [float(i[1]) for i in listcoord2]
+    print("Returned Balue from Man: ",coordx,coordy)
+    print("Returned Balue 2 from Man: ",coordx2,coordy2)
+    plt.plot(coordx,coordy,'ro')
+    plt.plot(coordx2,coordy2,'ro')
 
-coordx2 = [float(i[0]) for i in listcoord3]
-coordy2 = [float(i[1]) for i in listcoord3]
+#importing from Euclid algorithm
+def euclidalgorithm():        
+    listcoord1,listcoord2,listcoord3=ek.euclidmain()
+    print("Returned Balue from Man: ",listcoord1[0],listcoord1[1])
+    print("Returned Balue 2 from Man: ",listcoord2[0],listcoord2[1])
+    print("Returned Balue 3 from Man: ",listcoord3[0],listcoord3[1])
+    plt.plot(listcoord1[0],listcoord1[1],'ro')
+    plt.plot(listcoord2[0],listcoord2[1],'ro')
+    plt.plot(listcoord3[0],listcoord3[1],'ro')
 
 
-print("Returned Balue from Man: ",coordx,coordy)
-print("Returned Balue 2 from Man: ",coordx2,coordy2)
-plt.plot(coordx,coordy,'ro')
-plt.plot(coordx2,coordy2,'ro')
+#euclidalgorithm()
 
 var3 = IntVar()
 var4 = IntVar()
