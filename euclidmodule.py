@@ -2,24 +2,26 @@ import numpy as np
 import math
 #Second Method
 def euclidmain():
-    p = [(2, 10),(2, 5),(8, 4),(5, 8),(7, 5),
+    NOT = [(2, 10),(2, 5),(8, 4),(5, 8),(7, 5),
     (6, 4),
     (1, 2),
     (4, 9)]
 
     NOT = [(1,1),(2,1),(4,3),(5,4)]
+ 
+
+    p=[(1,6.5),(1,7),(1,6),(2,5),(2,4.5),(2,4),(3,9),(3,8),(4,6.8),(4,7),(5,8)]
+    
     p2 = p
-
-
     #choose n number of clusters(centers)
     orig = p[0]
     orig2 = p[3]
-    orig3 = p[6]
+ #   orig3 = p[6]
 
         #Change to add more
     L1 = list()
     L2 = list()
-    L3 = list()    
+ #   L3 = list()    
 
     G = list()
     Gprev = list()
@@ -41,14 +43,14 @@ def euclidmain():
         seconddist=list(map(lambda point:(math.sqrt(((point[0]-orig2[0])**2)+ ((point[1]-orig2[1])**2))), p))
         print("Second Distance Mean: ",seconddist)
 
-        thirddist=list(map(lambda point:(math.sqrt(((point[0]-orig3[0])**2)+ ((point[1]-orig3[1])**2))), p))
-        print("THrid Distance Mean: ",thirddist)
+ #       thirddist=list(map(lambda point:(math.sqrt(((point[0]-orig3[0])**2)+ ((point[1]-orig3[1])**2))), p))
+#        print("THrid Distance Mean: ",thirddist)
 
 
 
     #Combining the x and y coordinates back into pairs
         #Change to add more
-        zipped = zip(firstdist,seconddist,thirddist)
+        zipped = zip(firstdist,seconddist)#,thirddist)
         ###################
 
     #turning Zipped pairs into a list
@@ -74,8 +76,8 @@ def euclidmain():
             elif((minttuple+1) == 2):
                 L2.append(p[n])
 
-            elif((minttuple+1) == 3):
-                L3.append(p[n])
+ #           elif((minttuple+1) == 3):
+ #               L3.append(p[n])
             
             n=n+1
             #print("\n")
@@ -88,16 +90,16 @@ def euclidmain():
         euclid()
         orig = list(np.average(L1, axis = 0))
         orig2 = list(np.average(L2, axis=0))
-        orig3 = list(np.average(L3, axis=0))
+ #       orig3 = list(np.average(L3, axis=0))
         print("C1: ",orig)
         print("C2: ",orig2)
-        print("C3: ",orig3)
+ #       print("C3: ",orig3)
         print("Cur G: ",G)
         print("Prev G: ",Gprev)
         if G == Gprev:
             break
         elif G != Gprev:
             Gprev = G
-    return orig,orig2,orig3
+    return orig,orig2#,orig3
  
 #euclidmain()

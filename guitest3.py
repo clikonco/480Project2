@@ -202,21 +202,25 @@ def manhattanalgorithm():
     coordy2 = [float(i[1]) for i in listcoord2]
     print("Returned Balue from Man: ",coordx,coordy)
     print("Returned Balue 2 from Man: ",coordx2,coordy2)
-    plt.plot(coordx,coordy,'ro')
-    plt.plot(coordx2,coordy2,'ro')
+    plt.plot(coordx,coordy,'yo')
+    plt.plot(coordx2,coordy2,'yo')
 
 #importing from Euclid algorithm
 def euclidalgorithm():        
-    listcoord1,listcoord2,listcoord3=ek.euclidmain()
+    listcoord1,listcoord2=ek.euclidmain()
     print("Returned Balue from Man: ",listcoord1[0],listcoord1[1])
     print("Returned Balue 2 from Man: ",listcoord2[0],listcoord2[1])
-    print("Returned Balue 3 from Man: ",listcoord3[0],listcoord3[1])
-    plt.plot(listcoord1[0],listcoord1[1],'ro')
-    plt.plot(listcoord2[0],listcoord2[1],'ro')
-    plt.plot(listcoord3[0],listcoord3[1],'ro')
+    #print("Returned Balue 3 from Man: ",listcoord3[0],listcoord3[1])
+    plt.plot(listcoord1[0],listcoord1[1],'yo')
+    plt.plot(listcoord2[0],listcoord2[1],'yo')
+ #   plt.plot(listcoord3[0],listcoord3[1],'ro')
 
 
-#euclidalgorithm()
+#euclidalgorithm()#Calls euclidian algorthim
+manhattanalgorithm() #calls manhattan
+
+
+
 
 var3 = IntVar()
 var4 = IntVar()
